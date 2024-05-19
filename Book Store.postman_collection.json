@@ -1,0 +1,61 @@
+{
+	"info": {
+		"_postman_id": "44854261-e397-4948-b558-53be2434636a",
+		"name": "Book Store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10335499",
+		"_collection_link": "https://orange-capsule-569346.postman.co/workspace/BookList~a2ab6f64-b385-476b-9317-2bee9154dbba/collection/10335499-44854261-e397-4948-b558-53be2434636a?action=share&source=collection_link&creator=10335499"
+	},
+	"item": [
+		{
+			"name": "Get Book Details",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"var responseBody = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Response body contains property 'id'\", function () {\r",
+							"    responseBody.forEach(function(item) {\r",
+							"        pm.expect(item).to.have.property('id');\r",
+							"    });\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body contains property 'name'\", function () {\r",
+							"    responseBody.forEach(function(item) {\r",
+							"        pm.expect(item).to.have.property('name');\r",
+							"    });\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://simple-books-api.glitch.me/books",
+					"protocol": "https",
+					"host": [
+						"simple-books-api",
+						"glitch",
+						"me"
+					],
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
