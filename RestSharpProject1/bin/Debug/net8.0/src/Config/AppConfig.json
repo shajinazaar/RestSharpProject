@@ -1,0 +1,13 @@
+{
+  "BaseUrl": "https://app.respond.io/",
+  "Credentials": {
+    "Email": "shajinazar@outlook.com",
+    "Password": "Staycool1!"
+  },
+
+  "Users": {
+    "ownership": "manager",
+    "permissions": [],
+    "email": "shajikhan@outlook.com"
+  }
+}
